@@ -34,11 +34,102 @@ public:
 	}
 
 	int degree() {
-		cout ndegree[ndegree.size];
+		int val = 0;
+		for (int i = 0; i <= ndegree.size; i++) {
+			if (val <= ndegree[i]) {
+				val = ndegree[i];
+			}
+		}
+		cout<<val;
 	}
 
-	int operator+() {
-	}
+	Polynomial operator+(const Polynomial& p) {
+		Polynomial result;
+		for (int i = 0; i < this->ndegree.size;i++) {
+			bool check = false;
+			for (int u = 0; u < p.ndegree.size; u++) {
+				if (this->ndegree[i] == p.ndegree[u]) {
+					result.ndegree.push_back[i];
+					result.coeficients.push_back[this->coeficients[i] + p.coeficients[i]];
+					check = true;
+				}
+				if (check = false) {
+					result.ndegree.push_back[i];
+					result.coeficients.push_back[this->coeficients[i]];
+			}}
+
+		}
+
+		for (int i = 0; i < p.ndegree.size; i++) {
+			bool check = false;
+			for (int u = 0; u < this->ndegree.size; u++) {
+				if (p.ndegree[i] ==this->ndegree[u]) {
+					check = true;
+				}
+				if (check = false) {
+					result.ndegree.push_back[i];
+					result.coeficients.push_back[p.coeficients[i]];
+				}
+			}
+
+		}
+
+
+		return result;
+	};
+
+	Polynomial operator+=(const Polynomial& p) {
+		Polynomial result;
+		for (int i = 0; i < this->ndegree.size; i++) {
+			bool check = false;
+			for (int u = 0; u < p.ndegree.size; u++) {
+				if (this->ndegree[i] == p.ndegree[u]) {
+					result.ndegree.push_back[i];
+					result.coeficients.push_back[this->coeficients[i] + p.coeficients[i]];
+					check = true;
+				}
+				if (check = false) {
+					result.ndegree.push_back[i];
+					result.coeficients.push_back[this->coeficients[i]];
+				}
+			}
+
+		}
+
+		for (int i = 0; i < p.ndegree.size; i++) {
+			bool check = false;
+			for (int u = 0; u < this->ndegree.size; u++) {
+				if (p.ndegree[i] == this->ndegree[u]) {
+					check = true;
+				}
+				if (check = false) {
+					result.ndegree.push_back[i];
+					result.coeficients.push_back[p.coeficients[i]];
+				}
+			}
+
+		}
+		*this = result;
+
+	};
+
+
+	Polynomial operator+(const int& p) {
+		Polynomial result;
+		result =*this;
+		result.coeficients[0] = result.coeficients[0] + p;
+		return result;
+	};
+
+	double operator+(Polynomial& p) {
+		Polynomial result;
+		result = p;
+		result.coeficients[0] = result.coeficients[0] + *this;
+		return ;
+	};
+	Polynomial operator+=(const int& p) {
+		this->coeficients[0]=coeficients[0]+p;
+	};
 
 	Polynomial operator<<(Polynomial) {
 	}

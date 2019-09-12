@@ -10,4 +10,6 @@ int main() {
 	p1.add({ 1,2 });
 	Polynomial p2 = p1;
 	p1.get_expression(p1);
+
+	p1+p2
 };
