@@ -34,7 +34,7 @@ public:
 	}
 
 	int degree() {
-		cout[ndegree]
+		cout ndegree[ndegree.size];
 	}
 
 	int operator+() {
