@@ -4,7 +4,7 @@
 
 using namespace std;
 
-#define LISTA
+//#define LISTA
 
 string get_expression(Polynomial& p) {
 	stringstream ss;
